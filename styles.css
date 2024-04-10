@@ -1,0 +1,109 @@
+:root{
+    --bg-color: rgb(16, 11, 16);
+}
+
+body{
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.wand {
+    aspect-ratio: 1/10;
+    height: 80vmin;
+    background: linear-gradient(
+        to right,
+        rgb(26 24 28) 10%,
+        rgb(42 40 44) 45% 55%,
+        rgb(26 24 28) 90%
+    );
+    border-radius: 2vmin;
+    box-shadow: 0vmin 1vmin 4vmin rgb(0 0 0 / 80%);
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    translate: -50% -15%;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.cap {
+    height: 20%;
+    background: linear-gradient(
+        to right,
+        rgb(212 221 236) 10%,
+        rgb(255 255 255) 45% 50%,
+        rgb(212 221 236) 90%
+    );
+}
+
+.container{
+    height: 80vmin;
+    width: 100vmin;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(74, 74, 74, 0.175);
+    top: 50%;
+    left: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 5vmin;
+    transform: translate(-50%, -50%);
+}
+
+.image-box{
+    /* background: linear-gradient(
+        rgb(46, 34, 48) 0%,
+        rgb(89, 79, 89) 100%
+    ); */
+    background: rgb(48, 39, 49);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px black;
+    border-radius: 4vmin;
+    aspect-ratio: 1;
+    height: 30vmin;
+    position: relative;
+    top: 10vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container > .image-box:nth-child(1){
+    transform: translate(20%, -5%) rotate(5deg);
+    z-index: 5;
+}
+
+.container > .image-box:nth-child(2){
+    transform: translate(0, 7%) rotate(-5deg);
+    z-index: 4;
+}
+
+.container > .image-box:nth-child(3){
+    transform: translate(-30%) rotate(3deg);
+    z-index: 3;
+}
+
+i{
+    scale: 3.5;
+    color: rgba(118, 118, 118, 0.135);
+}
+
+img{
+    height: 30vmin;
+    width: 30vmin;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    z-index: 2;
+    opacity: var(--opacity);
+    filter: blur(calc(var(--blur)*10px));
+}
+
+.container > .image-box:nth-child(3) > img{
+    object-fit: cover;
+    object-position: 0 1px;
+}
